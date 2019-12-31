@@ -10,42 +10,42 @@ const tabsConst = [
     {
         index: 0,
         name: '关注',
-        url: '/home/attention'
+        url: '/home'
     },
     {
         index: 1,
         name: '推荐',
-        url: '/home/recommend'
+        url: '/home'
     },
     {
         index: 2,
         name: '历史',
-        url: '/home/recommend'
+        url: '/home'
     },
     {
         index: 3,
         name: '南京',
-        url: '/home/recommend'
+        url: '/home'
     },
     {
         index: 4,
         name: '双11',
-        url: '/home/recommend'
+        url: '/home'
     },
     {
         index: 5,
         name: '小视频',
-        url: '/home/recommend'
+        url: '/home'
     },
     {
         index: 6,
         name: '财经',
-        url: '/home/recommend'
+        url: '/home'
     },
     {
         index: 7,
         name: '视频',
-        url: '/home/recommend'
+        url: '/home'
     }
 ]
 import AppTwoHeader from '../components/AppTwoHeader.vue';

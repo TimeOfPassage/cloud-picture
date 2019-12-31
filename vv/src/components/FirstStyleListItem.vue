@@ -4,9 +4,11 @@
       <div slot="header" style="text-align:left;">
         {{ newItem.title }}
       </div>
-      <div slot="default" style="display: flex; flex-direction: row;">
-        <div style="width: 32%; height: 80px; border-radius: 10px;" v-for="(url,index) in newItem.images" :key="index">
-          <img :src="url" width="95%" height="74" style="margin-top:3px;margin-left:3px;"/>
+      <div slot="default" style="display: flex; flex-direction: row; justify-content: space-around;">
+        <div 
+          v-for="(url,index) in newItem.images" 
+          :key="index" 
+          :style="{'width': '32%', 'height': '80px', 'border-radius': '10px','': '','background-image':'url('+url+')', 'background-repeat': 'no-repeat','background-size':'cover'}">
         </div>
       </div>
       <div slot="footer" style="height: 15px;font-size:10px;color:grey;display: flex; flex-direction: row;justify-content: space-between;">
@@ -41,13 +43,17 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .app-home-recommend {
   margin: 0;
   padding: 15px;
   border-bottom: 1px solid gray #cccccc;
 }
-.app-home-recommend .van-cell-group .van-panel__footer {
-  padding:8px 16px 8px 4px;
+.van-cell-group .van-panel__footer {
+  padding:8px 4px;
+}
+.van-hairline--top-bottom::after, .van-hairline-unset--top-bottom::after, .van-hairline--top::after {
+  border-top-width: 0;
+  border-width: 0;
 }
 </style>

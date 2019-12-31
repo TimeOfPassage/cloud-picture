@@ -2,7 +2,7 @@
 <div class="app-two-header">
       <van-tabs v-model="active" sticky animated swipeable @change="change" line-width='20'>
         <van-tab animated v-for="item of newTabs" :key="item.index" :to="{path: item.url}" :title="item.name" style="margin-bottom: 50px;">
-            <router-view></router-view>
+            <TabContent :url="item.url" :tabIndex="active" :tabName="item.name"/>
         </van-tab>
     </van-tabs>
 </div>
@@ -10,6 +10,7 @@
 
 <script>
 import { Tab, Tabs } from 'vant';
+import TabContent from './TabContent.vue';
 export default {
     name:'AppTwoHeader',
     props: {
@@ -21,7 +22,8 @@ export default {
     },
     components: {
         [Tabs.name]: Tabs,
-        [Tab.name]: Tab
+        [Tab.name]: Tab,
+        TabContent
     },
     data() {
         return {
@@ -32,7 +34,8 @@ export default {
     methods: {
         change(name){
             //alert(name)
-            window.console.log(name)
+            this.active = name;
+            //window.console.log(name,this.newTabs)
         }
     }
 }
